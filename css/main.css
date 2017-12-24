@@ -91,6 +91,12 @@ span
 	font-family: monospace;
 }
 
+@media screen and (max-width: 980px) {
+    .language-btn {
+        font-size: 64px;
+    }
+}
+
 /* code syntax highlighting */
 .control-struct
 {
