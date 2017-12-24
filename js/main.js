@@ -109,19 +109,36 @@ function draw() {
 		document.getElementById('desc1bs').hidden = true;
 		document.getElementById('desc2bs').hidden = true;
 		document.getElementById('desc3bs').hidden = true;
+		// disable language button
+		var language_btn = document.getElementById('language')
+		language_btn.style.color = '#888';
+		language_btn.style.cursor = 'default';
+		language_btn.style['pointer-events'] = 'none';
+
+		var desc1_render_time = 550; // this is how long it takes the desc1 line to render
+
 		setAttr('desc1', desc1);
 		window.setTimeout(function() {
 			document.getElementById('desc1bs').hidden = false;
 			setAttr('desc2', desc2);
-			window.setTimeout(function() {
-				document.getElementById('desc2bs').hidden = false;
-				setAttr('desc3', desc3);
-	                        window.setTimeout(function() {
-					document.getElementById('desc3bs').hidden = false;
-        	                        setAttr('desc4', desc4);
-                	        }, desc3.length*15);
-			}, desc2.length*15);
-		}, 550);
+		}, desc1_render_time);
+
+		window.setTimeout(function() {
+			document.getElementById('desc2bs').hidden = false;
+			setAttr('desc3', desc3);
+		}, desc1_render_time + (desc2.length*15));
+
+		window.setTimeout(function() {
+			document.getElementById('desc3bs').hidden = false;
+			setAttr('desc4', desc4);
+		}, desc1_render_time + ((desc2.length + desc3.length)*15));
+
+		window.setTimeout(function() {
+			// re-enable language button
+			language_btn.style.color = '#FFF';
+			language_btn.style.cursor = 'pointer';
+			language_btn.style['pointer-events'] = null;
+		}, desc1_render_time + ((desc2.length + desc3.length + desc4.length)*15));
 }
 
 function setAttr(attribute, str) {
