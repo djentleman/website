@@ -1,4 +1,4 @@
-// globals vars:
+// global vars:
 var language = 'en';
 
 var site_data = {'name': '',
@@ -11,7 +11,6 @@ var site_data = {'name': '',
 		 'curr_comment': '',
 		 'curr': '"huq.io"',
 		 'desc_comment': '',
-//		 'desc1': '',
 		 'github': '"https://github.com/djentleman"',
 		 'linkedin': '"https://uk.linkedin.com/in/toddperry93"',
 		 'wantedly': '"https://www.wantedly.com/users/29291558"',
@@ -156,7 +155,7 @@ function type(word, attr) {
 	}, Math.floor(Math.random() * 30));
 }
 
-// set click event listener
+// set click event listeners
 document.getElementById('language').addEventListener('click', changeLanguage);
 
 setLanguage(language);
