@@ -1,9 +1,14 @@
 var vim_console_buffer = '';
 var vim_console_enabled = false;
 
+// shell history here is basically just everything you display in the shell screen
 var shell_prompt = 'todd@server$ ';
 var shell_history = shell_prompt;
 var shell_buffer = '';
+
+// array - list of all executed commands
+var bash_history = [''];
+var bash_command_pointer = 0; // this points to the latest command
 
 var vim_mode = true;
 var shell_mode = false;
@@ -16,8 +21,9 @@ var file_structure = {'home':
                          }
 		     };
 
-vim_corner = document.getElementById('vim-corner');
-shell = document.getElementById('shell');
+// these are some commonly used DOM elements
+var vim_corner = document.getElementById('vim-corner');
+var shell = document.getElementById('shell');
 
 function executeVimConsoleBuffer() {
 	if (vim_console_buffer == ':wq' ||
@@ -113,6 +119,18 @@ function executeShellBuffer() {
 		response = shell_buffer + ': command not found';
 	}
 
+	if (shell_buffer != '') {
+		bash_history[bash_command_pointer] = shell_buffer;
+		// current end of history is not empty command
+		if (bash_history[bash_history.length-1] != '') {
+			bash_command_pointer = bash_history.length;
+			bash_history.push('');
+		} else {
+			// already got an emoty command at the end
+			bash_command_pointer = bash_history.length - 1;
+		}
+	}
+
 	if (do_clear) {
 		shell_history = shell_prompt;
 	} else {
@@ -159,9 +177,30 @@ window.onkeydown = function(e) {
 	var charCode = e.keyCode || e.which;
 	if (shell_mode) {
 		// do shell things
+		// handler for deletions
 		if (charCode == 8) {
 			if (shell_buffer.length > 0) {
 				shell_buffer = shell_buffer.slice(0, -1);
+			}
+		}
+		// handler for up key
+		if (charCode == 38) {
+			// save current buffer to bash history
+			bash_history[bash_command_pointer] = shell_buffer;
+			// update pointer
+			if (bash_command_pointer > 0) {
+				bash_command_pointer -= 1;
+				shell_buffer = bash_history[bash_command_pointer];
+			}
+		}
+		// down key
+		if (charCode == 40) {
+			// save current buffer to bash history
+			bash_history[bash_command_pointer] = shell_buffer;
+			// update pointer
+			if (bash_command_pointer < bash_history.length -1) {
+				bash_command_pointer += 1;
+				shell_buffer = bash_history[bash_command_pointer];
 			}
 		}
 		shell.innerHTML = shell_history + shell_buffer;
