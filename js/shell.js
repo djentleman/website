@@ -8,6 +8,14 @@ var shell_buffer = '';
 var vim_mode = true;
 var shell_mode = false;
 
+var curr_dir = 'home/todd'
+
+var file_structure = {'home': 
+		         {'todd': 
+			     {'files': ['todd.py']}
+                         }
+		     };
+
 vim_corner = document.getElementById('vim-corner');
 shell = document.getElementById('shell');
 
@@ -39,17 +47,66 @@ function executeVimConsoleBuffer() {
 function executeShellBuffer() {
 	var response = '';
 	var do_clear = false;
+	var path = curr_dir.split('/').filter(word => word != '');
+	//console.log(path);
+	var work_dir = file_structure;
+	for (var i = 0; i < path.length; i++) {
+		work_dir = work_dir[path[i]];
+	}
+	directories = Object.keys(work_dir).filter(word => word != 'files');
+	files = work_dir.files;
 	// command parsing logic goes here
-	if (shell_buffer == 'vi todd.py') {
+	if (shell_buffer.slice(0, 2) == 'vi') {
 		// re-open cv data
-		document.getElementById('vim').hidden = false;
-		document.getElementById('language').hidden = false;
-		shell.hidden = true;
-		document.title = 'vim - todd.py';
-		shell_mode = false;
-		vim_mode = true;
+		var vim_args = shell_buffer.split(' ')[1];
+		if (vim_args != undefined) {
+			vim_args = vim_args.split('/');
+			var vim_path = work_dir;
+			var do_vim = true;
+			for (var i = 0; i < vim_args.length - 1; i++) {
+				if (Object.keys(vim_path).indexOf(vim_args[i]) != -1) {
+					vim_path = vim_path[vim_args[i]]
+				} else {
+					// this isnt actually vim behavior...
+					do_vim = false;
+					response = 'vim: ' + shell_buffer.split(' ')[1] + ': No such file or directory';
+					break;
+				}
+			}
+			if (do_vim) {
+				// handle todd.py
+				var vim_filename = vim_args[vim_args.length-1]
+				if (vim_filename == 'todd.py' && vim_path.files != undefined) {
+					if (vim_path.files.indexOf(vim_filename) != -1) {
+						document.getElementById('vim').hidden = false;
+						document.getElementById('language').hidden = false;
+						shell.hidden = true;
+						document.title = 'vim - todd.py';
+						shell_mode = false;
+						vim_mode = true;
+					}
+				} else {
+					response = 'vim: ' + shell_buffer.split(' ')[1] + ': No such file or directory';
+				}
+			}
+		}
 	} else if (shell_buffer == 'ls') {
-		response = 'todd.py'
+		response = (directories.concat(files)).join(' ');
+	} else if (shell_buffer.slice(0, 2) == 'cd') {
+		var target = shell_buffer.split(' ')[1];
+		if (target != undefined) {	
+			if (target == '.') { // do nothing
+			} else if (target == '..') {
+				curr_dir = path.splice(0, path.length - 1).join('/');
+			} else if (directories.indexOf(target) != -1) {
+				path = path.concat([target]);
+				curr_dir = path.join('/');
+			} else {
+				response = '-bash: cd: ' + target + ': No such file or directory';
+			}
+		}
+	} else if (shell_buffer == 'pwd') {
+		response = '/' + curr_dir
 	} else if (shell_buffer == 'clear') {
 		do_clear = true;
 	} else if (shell_buffer != '') {
