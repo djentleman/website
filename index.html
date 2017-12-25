@@ -4,7 +4,7 @@
 		<link rel="stylesheet" type="text/css" href="/css/main.css">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta charset="utf-8" />
-		<title>todd.py</title>
+		<title>vim - todd.py</title>
 	</head>
 	<body>
 		<div class="nav">
@@ -14,112 +14,121 @@
 		</div>
 		<div class="splash-wrapper">
 			<div class="intro">
-				<h3 class="text">
-					<span class="comment" id="hashbang">
-					</span>
-				</h3>
-				<br>
-				<h3 class="text">
-					<span class="control-struct" id="classdef"></span>
-					<span class="struct-name" id="classname"></span><span id="classparen"></span>
-				</h3>
-				<h3 style="padding-left:2em" class="text">
+				<h3 class="shell" id="shell"></h3>
+				<div id="vim">
+					<h3 class="text">
+						<span class="comment" id="hashbang">
+						</span>
+					</h3>
+					<br>
+					<h3 class="text">
+						<span class="control-struct" id="classdef"></span>
+						<span class="struct-name" id="classname"></span><span id="classparen"></span>
+					</h3>
+					<h3 style="padding-left:2em" class="text">
 					<span class="control-struct" id="initdef"></span>
 					<span class="struct-name" id="init"></span><span id="initparen"></span>
-				</h3>
-				<h3 style="padding-left:4em" class="text">
-					<span class="struct-name" id="super"></span><span id="superparen"></span>
-				</h3>
-				<h3 style="padding-left:4em" class="text">
-					<span id="sname"></span>
-					<span id="name"class="string"></span>
-				</h3>
-				<h3 style="padding-left:4em" class="text">
-					<span id="sloc"></span>
+					</h3>
+					<h3 style="padding-left:4em" class="text">
+						<span class="struct-name" id="super"></span><span id="superparen"></span>
+					</h3>
+					<h3 style="padding-left:4em" class="text">
+						<span id="sname"></span>
+						<span id="name"class="string"></span>
+					</h3>
+					<h3 style="padding-left:4em" class="text">
+						<span id="sloc"></span>
 					<span id="loc" class="string"></span>
-				</h3>
-				<h3 style="padding-left:4em" class="text">
-					<span id="sage"></span>
-					<span id="age" class="number"></span>
-				</h3>
-				<h3 style="padding-left:4em" class="text">
-					<span id="sjob"></span>
-					<span id="job" class="string"></span>
-				</h3>
-				<h3 style="padding-left:4em" class="text">
+					</h3>
+					<h3 style="padding-left:4em" class="text">
+						<span id="sage"></span>
+						<span id="age" class="number"></span>
+					</h3>
+					<h3 style="padding-left:4em" class="text">
+						<span id="sjob"></span>
+						<span id="job" class="string"></span>
+					</h3>
+					<h3 style="padding-left:4em" class="text">
 					<span id="slang"></span>
 					[<span id="english" class="string"></span>, <span id="japanese" class="string"></span>]
-				</h3>
-				<h3 style="padding-left:4em" class="text">
-					<span id="sfood"></span>
-					<span id="likefood" class="string"></span>
-				</h3>
-				<h3 style="padding-left:4em" class="text">
-					<span class="comment" id="curr_comment"></span>
-				</h3>
-				<h3 style="padding-left:4em" class="text">
-					<span id="scurr"></span>
-					<a id="curr" target="_blank" href="http://www.huq.io" class="huq"></a>
-				</h3>
-				<h3 style="padding-left:4em" class="text">
-					<span class="comment" id="desc_comment"></span>
-				</h3>
-				<h3 style="padding-left:4em" class="text">
-					<span id="sdesc"></span>
-					<span>
-						<span id="desc1" class="string"></span><span id="desc1bs"> +
-						<span class="backslash">\</span></span>
-					</span>
-				</h3>
-				<h3 style="padding-left:calc(15em + 5pt)" class="text">
-					<span>
-						<span id="desc2" class="string"></span><span id="desc2bs"> +
-						<span class="backslash">\</span></span>
-					</span>
-				</h3>
-				<h3 style="padding-left:calc(15em + 5pt)" class="text">
-					<span>
-						<span id="desc3" class="string"></span><span id="desc3bs"> +
-						<span class="backslash">\</span></span>
-					</span>
-				</h3>
-				<h3 style="padding-left:calc(15em + 5pt)" class="text">
-					<span>
-						<span id="desc4" class="string"></span>
-					</span>
-				</h3>
-				<br>
-				<!-- contact info -->
-				<h3 style="padding-left:2em" class="text">
-					<span class="control-struct" id="gcidef"></span>
-					<span class="struct-name" id="gci"></span><span id="gciparen"></span>
-				</h3>
-				<h3 style="padding-left:4em" class="text">
-					<span class="control-struct" id="gcireturn"></span>
-					{<span class="string" id="sgithub"></span>:
-					<a class="string" target="_blank" id="github" href="https://github.com/djentleman"></a>,
-				</h3>
-				<h3 style="padding-left:calc(8em + 9pt)" class="text">
-					<span class="string" id="slinkedin"></span>:
+					</h3>
+					<h3 style="padding-left:4em" class="text">
+						<span id="sfood"></span>
+						<span id="likefood" class="string"></span>
+					</h3>
+					<h3 style="padding-left:4em" class="text">
+						<span class="comment" id="curr_comment"></span>
+					</h3>
+					<h3 style="padding-left:4em" class="text">
+						<span id="scurr"></span>
+						<a id="curr" target="_blank" href="http://www.huq.io" class="huq"></a>
+					</h3>
+					<h3 style="padding-left:4em" class="text">
+						<span class="comment" id="desc_comment"></span>
+					</h3>
+					<h3 style="padding-left:4em" class="text">
+						<span id="sdesc"></span>
+						<span>
+							<span id="desc1" class="string"></span><span id="desc1bs"> +
+							<span class="backslash">\</span></span>
+						</span>
+					</h3>
+					<h3 style="padding-left:calc(15em + 5pt)" class="text">
+						<span>
+							<span id="desc2" class="string"></span><span id="desc2bs"> +
+							<span class="backslash">\</span></span>
+						</span>
+					</h3>
+					<h3 style="padding-left:calc(15em + 5pt)" class="text">
+						<span>
+							<span id="desc3" class="string"></span><span id="desc3bs"> +
+							<span class="backslash">\</span></span>
+						</span>
+					</h3>
+					<h3 style="padding-left:calc(15em + 5pt)" class="text">
+						<span>
+							<span id="desc4" class="string"></span>
+						</span>
+					</h3>
+					<br>
+					<!-- contact info -->
+					<h3 style="padding-left:2em" class="text">
+						<span class="control-struct" id="gcidef"></span>
+						<span class="struct-name" id="gci"></span><span id="gciparen"></span>
+					</h3>
+					<h3 style="padding-left:4em" class="text">
+						<span class="control-struct" id="gcireturn"></span>
+						{<span class="string" id="sgithub"></span>:
+						<a class="string" target="_blank" id="github" href="https://github.com/djentleman"></a>,
+					</h3>
+					<h3 style="padding-left:calc(8em + 9pt)" class="text">
+						<span class="string" id="slinkedin"></span>:
 					<a class="string" target="_blank" id="linkedin" href="https://uk.linkedin.com/in/toddperry93"></a>,
-				</h3>
-				<h3 style="padding-left:calc(8em + 9pt)" class="text">
-					<span class="string" id="swantedly"></span>:
-					<a class="string" target="_blank" id="wantedly" href="https://www.wantedly.com/users/29291558"></a>,
-				</h3>
-				<h3 style="padding-left:calc(8em + 9pt)" class="text">
-					<span class="string" id="semail"></span>:
-					<span class="string" id="email"></span>
-				</h3>
-				<h3 style="padding-left: 4em" class="text">
+					</h3>
+					<h3 style="padding-left:calc(8em + 9pt)" class="text">
+						<span class="string" id="swantedly"></span>:
+						<a class="string" target="_blank" id="wantedly" href="https://www.wantedly.com/users/29291558"></a>,
+					</h3>
+					<h3 style="padding-left:calc(8em + 9pt)" class="text">
+						<span class="string" id="semail"></span>:
+						<span class="string" id="email"></span>
+					</h3>
+					<h3 style="padding-left: 4em" class="text">
 					}
-				</h3>
-				<!-- projects? -->
+					</h3>
+					<!-- projects? -->
+
+					<!-- bottom left corder - VIM console -->
+					<div class="vim-corner">
+						<h3 id="vim-corner"></h3>
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class="footer">
 				<h3 class="footer_text">Todd Perry - 2017</h1>
 		</div>
 		<script src="js/main.js"></script>
+		<script src="js/shell.js"></script>
 	</body>
 </html>
