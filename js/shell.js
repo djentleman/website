@@ -217,8 +217,9 @@ window.onkeydown = function(e) {
 		// do shell things
 		// handler for deletions
 		if (charCode == 8) {
-			if (shell_buffer.length > 0) {
-				shell_buffer = shell_buffer.slice(0, -1);
+			if (shell_buffer.length - shell_pointer > 0) {
+				var offset = shell_buffer.length - shell_pointer;
+				shell_buffer = shell_buffer.slice(0, offset-1) + shell_buffer.slice(offset, shell_buffer.length);
 			}
 		}
 		// handler for up key
