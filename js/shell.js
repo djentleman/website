@@ -77,6 +77,7 @@ function executeVimConsoleBuffer() {
 }
 
 function handleCd(path) {
+	// TODO: handle chained paths using a loop
 	var target = shell_buffer.split(' ')[1];
 	if (target != undefined) {	
 		if (target == '.') { // do nothing
@@ -141,10 +142,17 @@ function executeShellBuffer() {
 	directories = Object.keys(work_dir).filter(word => word != 'files');
 	files = work_dir.files;
 	// command parsing logic goes here
+        // TODO: split the shell_buffer by space, parse args properly
 	if (shell_buffer.slice(0, 2) == 'vi') {
 		response = handleVim(work_dir)
-	} else if (shell_buffer == 'ls') {
-		response = (directories.concat(files)).join(' ');
+	} else if (shell_buffer.slice(0, 2) == 'ls') {
+                var toDisplay = directories.concat(files);
+                
+                if (shell_buffer.indexOf('-a') !== -1) {
+			toDisplay = ['.', '..'].concat(toDisplay);
+			// TODO: implement hidden files here
+		}
+		response = (toDisplay).join(' ');
 	} else if (shell_buffer.slice(0, 2) == 'cd') {
 		response = handleCd(path);
 	} else if (shell_buffer == 'pwd') {
