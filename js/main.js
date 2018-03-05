@@ -37,7 +37,7 @@ var site_data = {'name': '',
 		 'gciparen': '(self):',
 		 'gcireturn': 'return',
 		 'sgithub': '"github"',
-		 'slinkedin': '"slinkedin"',
+		 'slinkedin': '"linkedin"',
 		 'swantedly': '"wantedly"',
 		 'semail': '"email"'
 };
