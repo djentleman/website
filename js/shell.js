@@ -38,6 +38,18 @@ var file_structure = {'home':
 var vim_corner = document.getElementById('vim-corner');
 var shell = document.getElementById('shell');
 
+function hideLanguage() {
+	document.getElementById('language-en').hidden = true;
+	document.getElementById('language-ja').hidden = true;
+	document.getElementById('language-ru').hidden = true;
+}
+
+function showLanguage() {
+	document.getElementById('language-en').hidden = false;
+	document.getElementById('language-ja').hidden = false;
+	document.getElementById('language-ru').hidden = false;
+	document.getElementById('language-' + language).hidden = true;
+}
 
 function addHighlight(text, ptr) {
 	return text.slice(0, ptr) +
@@ -58,7 +70,7 @@ function executeVimConsoleBuffer() {
 	    vim_console_buffer == ':q') {
 		// nuke contents of main div, knock the user into the console
 		document.getElementById('vim').hidden = true;
-		document.getElementById('language').hidden = true;
+		hideLanguage();
 		shell.hidden = false;
 		printShell();
 		document.title = 'bash';
@@ -115,7 +127,7 @@ function handleVim(work_dir) {
 			if (vim_filename == 'todd.py' && vim_path.files != undefined) {
 				if (vim_path.files.indexOf(vim_filename) != -1) {
 					document.getElementById('vim').hidden = false;
-					document.getElementById('language').hidden = false;
+					showLanguage();
 					shell.hidden = true;
 					document.title = 'vim - todd.py';
 					shell_mode = false;
