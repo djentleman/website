@@ -44,7 +44,9 @@ span
 
 .tty
 {
-	padding: 8%;
+	padding-top: 6%;
+	padding-left: 8%;
+        height: 0%;
 }
 
 .nav
