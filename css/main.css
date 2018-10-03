@@ -81,7 +81,7 @@ span
 	float: right
 }
 
-.language-btn
+.language-btn-en, .language-btn-ja, .language-btn-ru
 {
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
@@ -93,7 +93,8 @@ span
 }
 
 @media screen and (max-width: 980px) {
-    .language-btn {
+    .language-btn-en, .language-btn-ja, .language-btn-ru
+    {
         font-size: 64px;
     }
 }
