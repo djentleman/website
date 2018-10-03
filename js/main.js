@@ -47,48 +47,84 @@ var desc2 = '';
 var desc3 = '';
 var desc4 = '';
 
-function changeLanguage() {
-	if (language == 'en') {
-		// go from english to japanese
-		language = 'ja';
-		document.getElementById('language').innerHTML = 'English';
-	} else if (language == 'ja') {
-		// go from japanese to english
-		language = 'en';
-		document.getElementById('language').innerHTML = '日本語';
-	}
+function changeLanguage(new_language) {
+        language = new_language;
+	document.getElementById('language-en').hidden = false;
+	document.getElementById('language-ja').hidden = false;
+	document.getElementById('language-ru').hidden = false;
+	document.getElementById('language-' + language).hidden = true;
 	setLanguage(language);
 }
 
 function setLanguage(language) {
-	if (language == 'en') {
+	if (language === 'en') {
 		site_data.name = '"Todd Perry"';
 		site_data.loc = '"London, UK"';
 		site_data.job = '"Software Engineer"';
 		site_data.english = '"English"';
 		site_data.japanese = '"Japanese"';
+		//site_data.russian = '"Russian"';
+		site_data.englishlevel = '"Native Speaker"';
+		site_data.japaneselevel = '"Working Proficiency (JLPT N2)"';
+		//site_data.russianlevel = '"Beginner"';
 		site_data.likefood = '"Ramen"';
 		site_data.curr_comment = '# Currently Working At';
 		site_data.desc_comment = '# TODO: Write a better Introduction!';
 		desc1 = '"Hello"';
 		desc2 = '"Python Engineer Currently Working In London"';
 		desc3 = '"Graduated from the University of Portsmouth"';
-		desc4 = '"Enjoys: Vim, Python, Electronics"';
-	} else if (language = 'ja') {
+		desc4 = '"Enjoys: Vim, Python, Languages, Electronics"';
+	} else if (language === 'ja') {
 		site_data.name = '"ペリー・トッド"';
 		site_data.loc = '"イギリス、ロンドン"';
 		site_data.job = '"スフトウエア開発者"';
 		site_data.english = '"英語"';
 		site_data.japanese = '"日本語"';
+		//site_data.russian = '"ロシア語"';
+		site_data.englishlevel = '"母語"';
+		site_data.japaneselevel = '"上級(日本語能力試験二級)"';
+		//site_data.russianlevel = '"初心者"';
 		site_data.likefood = '"ラーメン"';
 		site_data.curr_comment = '# 現在、この会社に働いています';
 		site_data.desc_comment = '# TODO: もっといい自己紹介を書く';
 		desc1 = '"初めまして"';
 		desc2 = '"ロンドンで働いているパイソン開発者です"';
 		desc3 = '"イギリスのポーツマス大学を卒業しました"';
-		desc4 = '"気に入ってることは：パイソン、Vim、電子工学"';
+		desc4 = '"気に入ってることは：パイソン、Vim、言語学習、電子工学"';
+	} else if (language === 'ru') {
+		site_data.name = '"Тодд Перри"';
+		site_data.loc = '"Лондон、Британия"';
+		site_data.job = '"Программист"';
+		site_data.english = '"Английский"';
+		site_data.japanese = '"Японский"';
+		//site_data.russian = '"Русский"';
+		site_data.englishlevel = '"Native Speaker"';
+		site_data.japaneselevel = '"Working Proficiency (JLPT N2)"';
+		//site_data.russianlevel = '"Beginner"';
+		site_data.likefood = '"Рамен"';
+		site_data.curr_comment = '# Сейчас, я работаю на это компании';
+		site_data.desc_comment = '# TODO: пиши хорошее введение';
+		desc1 = '"Здравствуйте!"';
+		desc2 = '"Я питон программист в Лондоне"';
+		desc3 = '"Я учил информатику в Портсмутском университете"';
+		desc4 = '"Мне нравится: Питон, Vim, Языки, Электроника"';
 	}
+
 	draw()
+}
+
+function deactivate(id) {
+	var language_btn = document.getElementById(id)
+	language_btn.style.color = '#888';
+	language_btn.style.cursor = 'default';
+	language_btn.style['pointer-events'] = 'none';
+}
+
+function reactivate(id) {
+	var language_btn = document.getElementById(id)
+	language_btn.style.color = '#FFF';
+	language_btn.style.cursor = 'pointer';
+	language_btn.style['pointer-events'] = null;
 }
 
 function draw() {
@@ -108,11 +144,11 @@ function draw() {
 		document.getElementById('desc1bs').hidden = true;
 		document.getElementById('desc2bs').hidden = true;
 		document.getElementById('desc3bs').hidden = true;
+
 		// disable language button
-		var language_btn = document.getElementById('language')
-		language_btn.style.color = '#888';
-		language_btn.style.cursor = 'default';
-		language_btn.style['pointer-events'] = 'none';
+                deactivate('language-en');
+                deactivate('language-ja');
+                deactivate('language-ru');
 
 		var desc1_render_time = 550; // this is how long it takes the desc1 line to render
 
@@ -134,9 +170,9 @@ function draw() {
 
 		window.setTimeout(function() {
 			// re-enable language button
-			language_btn.style.color = '#FFF';
-			language_btn.style.cursor = 'pointer';
-			language_btn.style['pointer-events'] = null;
+			reactivate('language-en');
+			reactivate('language-ja');
+			reactivate('language-ru');
 		}, desc1_render_time + ((desc2.length + desc3.length + desc4.length)*15));
 }
 
@@ -156,7 +192,9 @@ function type(word, attr) {
 }
 
 // set click event listeners
-document.getElementById('language').addEventListener('click', changeLanguage);
+document.getElementById('language-en').addEventListener('click', function(){changeLanguage('en')});
+document.getElementById('language-ja').addEventListener('click', function(){changeLanguage('ja')});
+document.getElementById('language-ru').addEventListener('click', function(){changeLanguage('ru')});
 
-setLanguage(language);
+changeLanguage(language);
 
