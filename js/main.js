@@ -82,7 +82,7 @@ function setLanguage(language) {
 		site_data.japanese = '"日本語"';
 		site_data.russian = '"ロシア語"';
 		site_data.englishlevel = '"母語"';
-		site_data.japaneselevel = '"上級(日本語能力試験二級)"';
+		site_data.japaneselevel = '"上級（日本語能力試験二級）"';
 		site_data.russianlevel = '"初心者"';
 		site_data.likefood = '"ラーメン"';
 		site_data.curr_comment = '# 現在、この会社に働いています';
