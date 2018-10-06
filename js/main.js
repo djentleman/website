@@ -98,9 +98,9 @@ function setLanguage(language) {
 		site_data.english = '"Английский"';
 		site_data.japanese = '"Японский"';
 		site_data.russian = '"Русский"';
-		site_data.englishlevel = '"Native Speaker"';
-		site_data.japaneselevel = '"Working Proficiency (JLPT N2)"';
-		site_data.russianlevel = '"Beginner"';
+		site_data.englishlevel = '"Родной Язык"';
+		site_data.japaneselevel = '"Повышенный (Нихонго Норёку Сикэн N2)"';
+		site_data.russianlevel = '"Начинающий"';
 		site_data.likefood = '"Рамен"';
 		site_data.curr_comment = '# Сейчас, я работаю на это компании';
 		site_data.desc_comment = '# TODO: пиши хорошее введение';
