@@ -14,6 +14,7 @@ var site_data = {'name': '',
 		 'github': '"https://github.com/djentleman"',
 		 'linkedin': '"https://uk.linkedin.com/in/toddperry93"',
 		 'wantedly': '"https://www.wantedly.com/users/29291558"',
+                 'medium': 'https://medium.com/@toddperry_78831',
 		 'email': '"todd.perry@myport.ac.uk"',
 		 'hashbang': '#!/usr/bin/python3.6',
 		 'classdef': 'class',
@@ -39,6 +40,7 @@ var site_data = {'name': '',
 		 'sgithub': '"github"',
 		 'slinkedin': '"linkedin"',
 		 'swantedly': '"wantedly"',
+                 'smedium': '"medium"',
 		 'semail': '"email"'
 };
 
