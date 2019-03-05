@@ -33,6 +33,7 @@ var site_data = {'name': '',
 		 'sfood': 'self.favourite_food =',
 		 'scurr': 'self.current =',
 		 'sdesc': 'self.description =',
+		 'sskill': 'self.skills =',
 		 'gcidef': 'def',
 		 'gci': 'get_contact_info',
 		 'gciparen': '(self):',
@@ -72,10 +73,15 @@ function setLanguage(language) {
 		site_data.likefood = '"Ramen"';
 		site_data.curr_comment = '# Currently Working At';
 		site_data.desc_comment = '# TODO: Write a better Introduction!';
+		site_data.skill1 = '"Python"';
+		site_data.skill2 = '"Linux"';
+		site_data.skill3 = '"Machine Learning"';
+		site_data.skill4 = '"Docker/Devops"';
+		site_data.skill5 = '"AWS/GCP"';
 		desc1 = '"Hello"';
 		desc2 = '"Python Engineer Currently Working In London"';
 		desc3 = '"Graduated from the University of Portsmouth"';
-		desc4 = '"Enjoys: Vim, Python, Languages, Electronics"';
+		desc4 = '"Enjoys: Vim, Mathematics, Languages, Electronics"';
 	} else if (language === 'ja') {
 		site_data.name = '"ペリー・トッド"';
 		site_data.loc = '"イギリス、ロンドン"';
@@ -89,10 +95,15 @@ function setLanguage(language) {
 		site_data.likefood = '"ラーメン"';
 		site_data.curr_comment = '# 現在、この会社に働いています';
 		site_data.desc_comment = '# TODO: もっといい自己紹介を書く';
+		site_data.skill1 = '"パイソン"';
+		site_data.skill2 = '"リナックス"';
+		site_data.skill3 = '"機械学習"';
+		site_data.skill4 = '"ドッカー/デブオプス"';
+		site_data.skill5 = '"AWS/GCP"';
 		desc1 = '"初めまして"';
 		desc2 = '"ロンドンで働いているパイソン開発者です"';
 		desc3 = '"イギリスのポーツマス大学を卒業しました"';
-		desc4 = '"気に入ってることは：パイソン、Vim、言語学習、電子工学"';
+		desc4 = '"気に入ってることは：数学、Vim、言語学習、電子工学"';
 	} else if (language === 'ru') {
 		site_data.name = '"Тодд Перри"';
 		site_data.loc = '"Лондон、Британия"';
@@ -106,10 +117,15 @@ function setLanguage(language) {
 		site_data.likefood = '"Рамен"';
 		site_data.curr_comment = '# Сейчас, я работаю на это компании';
 		site_data.desc_comment = '# TODO: пиши хорошее введение';
+		site_data.skill1 = '"Питон"';
+		site_data.skill2 = '"Линукс"';
+		site_data.skill3 = '"Машинное Обучение"';
+		site_data.skill4 = '"Докер/Девопс"';
+		site_data.skill5 = '"Амазон Беб Цервис/Гугл Клауд Платформ"';
 		desc1 = '"Здравствуйте!"';
 		desc2 = '"Я питон программист в Лондоне"';
 		desc3 = '"Я учил информатику в Портсмутском университете"';
-		desc4 = '"Мне нравится: Питон, Vim, Языки, Электроника"';
+		desc4 = '"Мне нравится: Математика, Vim, Языки, Электроника"';
 	}
 
 	draw()
