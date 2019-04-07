@@ -47,6 +47,8 @@ var site_data = {'name': '',
 		 'comment_cv': '',
 		 'cv_en': '"cv_en.pdf"',
 		 'cv_jp': '"cv_jp.pdf"',
+		 'scv_en': '"english"',
+		 'scv_jp': '"japanese"',
 };
 
 var desc1 = '';
@@ -83,8 +85,6 @@ function setLanguage(language) {
 		site_data.skill4 = '"Docker/Devops"';
 		site_data.skill5 = '"AWS/GCP"';
 		site_data.comment_cv = '';
-		site_data.scv_en = '"English"';
-		site_data.scv_jp = '"Japanese"';
 		desc1 = '"Hello"';
 		desc2 = '"Python Engineer Currently Working In London"';
 		desc3 = '"Graduated from the University of Portsmouth"';
@@ -108,8 +108,6 @@ function setLanguage(language) {
 		site_data.skill4 = '"ドッカー/デブオプス"';
 		site_data.skill5 = '"AWS/GCP"';
 		site_data.comment_cv = '# 履歴書';
-		site_data.scv_en = '"英語"';
-		site_data.scv_jp = '"日本語"';
 		desc1 = '"初めまして"';
 		desc2 = '"ロンドンで働いているパイソン開発者です"';
 		desc3 = '"イギリスのポーツマス大学を卒業しました"';
@@ -132,9 +130,7 @@ function setLanguage(language) {
 		site_data.skill3 = '"Машинное Обучение"';
 		site_data.skill4 = '"Докер/Девопс"';
 		site_data.skill5 = '"Амазон Беб Сервис/Гугл Клауд Платформ"';
-		site_data.comment_cv = '# резюме, сейчас, у меня нет резюме по-русски';
-		site_data.scv_en = '"По-Английски"';
-		site_data.scv_jp = '"По-Японски"';
+		site_data.comment_cv = '# резюме: сейчас, у меня нет резюме по-русски';
 		desc1 = '"Здравствуйте!"';
 		desc2 = '"Я питон программист в Лондоне"';
 		desc3 = '"Я учил информатику в Портсмутском университете"';
