@@ -46,6 +46,7 @@ span
 .tty
 {
 	padding: 6%;
+	padding-bottom: 0px;
         height: 0%;
 }
 
