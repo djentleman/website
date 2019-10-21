@@ -9,7 +9,7 @@ var site_data = {'name': '',
 		 'japanese': '',
 		 'likefood': '',
 		 'curr_comment': '',
-		 'curr': '"huq.io"',
+		 'curr': '"www.nowcast.co.jp"',
 		 'desc_comment': '',
 		 'github': '"https://github.com/djentleman"',
 		 'linkedin': '"https://uk.linkedin.com/in/toddperry93"',
@@ -76,8 +76,8 @@ function changeLanguage(new_language) {
 function setLanguage(language) {
 	if (language === 'en') {
 		site_data.name = '"Todd Perry"';
-		site_data.loc = '"London, UK"';
-		site_data.job = '"Software Engineer"';
+		site_data.loc = '"Tokyo, Japan"';
+		site_data.job = '"Data Scientist"';
 		site_data.english = '"English"';
 		site_data.japanese = '"Japanese"';
 		site_data.russian = '"Russian"';
@@ -95,13 +95,13 @@ function setLanguage(language) {
 		site_data.comment_cv = '';
 		site_data.comment_papers = '';
 		desc1 = '"Hello"';
-		desc2 = '"Python Engineer Currently Working In London"';
+		desc2 = '"Data Scientist Currently Working In Tokyo"';
 		desc3 = '"Graduated from the University of Portsmouth"';
 		desc4 = '"Enjoys: Vim, Mathematics, Languages, Electronics"';
 	} else if (language === 'ja') {
 		site_data.name = '"ペリー・トッド"';
-		site_data.loc = '"イギリス、ロンドン"';
-		site_data.job = '"スフトウエア開発者"';
+		site_data.loc = '"東京、日本"';
+		site_data.job = '"データサイエンティスト"';
 		site_data.english = '"英語"';
 		site_data.japanese = '"日本語"';
 		site_data.russian = '"ロシア語"';
@@ -119,7 +119,7 @@ function setLanguage(language) {
 		site_data.comment_cv = '# 履歴書';
 		site_data.comment_papers = '# 研究論文（全部英語で書いてある）';
 		desc1 = '"初めまして"';
-		desc2 = '"ロンドンで働いているパイソン開発者です"';
+		desc2 = '"現在東京でデータサイエンティストとして働いてる"'
 		desc3 = '"イギリスのポーツマス大学を卒業しました"';
 		desc4 = '"気に入ってることは：数学、Vim、言語学習、電子工学"';
 	} else if (language === 'ru') {
@@ -143,7 +143,7 @@ function setLanguage(language) {
 		site_data.comment_cv = '# резюме: сейчас, у меня нет резюме по-русски';
 		site_data.comment_papers = '# научно-исследовательские работы (все по-английски)';
 		desc1 = '"Здравствуйте!"';
-		desc2 = '"Я питон программист в Лондоне"';
+                desc2 = '"Я тепер рабораю програмистом в Токио"'
 		desc3 = '"Я учил информатику в Портсмутском университете"';
 		desc4 = '"Мне нравится: Математика, Vim, Языки, Электроника"';
 	}
