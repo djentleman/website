@@ -124,7 +124,7 @@ function setLanguage(language) {
 		desc4 = '"気に入ってることは：数学、Vim、言語学習、電子工学"';
 	} else if (language === 'ru') {
 		site_data.name = '"Тодд Перри"';
-		site_data.loc = '"Лондон、Британия"';
+		site_data.loc = '"Токио, Япония"'
 		site_data.job = '"Программист"';
 		site_data.english = '"Английский"';
 		site_data.japanese = '"Японский"';
